@@ -1,0 +1,26 @@
+version: '3'
+
+tasks:
+  build:
+    cmds:
+      - docker build -t example.com/confluence:8.0.3 .
+  
+  push:
+    cmds:
+      - docker push example.com/confluence:8.0.3
+  
+  gen:
+    cmds:
+      - java -jar atlassian-agent-license-generator.jar -d -m test@gmail.com -n BAT -p conf -o http://localhost -s {{.CLI_ARGS}}
+  
+  plugin:
+    cmds:
+      - java -jar atlassian-agent-license-generator.jar -d -m test@gmail.com -n BAT -p {{.CLI_ARGS}} -o http://localhost -s {{.CLI_ARGS}
+  
+  up:
+    cmds:
+      - docker compose up -d
+
+  down:
+    cmds:
+      - docker compose down
