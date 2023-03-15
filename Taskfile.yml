@@ -15,7 +15,7 @@ tasks:
   
   plugin:
     cmds:
-      - java -jar atlassian-agent-license-generator.jar -d -m test@gmail.com -n BAT -p {{.CLI_ARGS}} -o http://localhost -s {{.CLI_ARGS}
+      - java -jar atlassian-agent-license-generator.jar -d -m test@gmail.com -n BAT -p {{.CLI_ARGS}} -o http://localhost -s {{.CLI_ARGS}}
   
   up:
     cmds:
